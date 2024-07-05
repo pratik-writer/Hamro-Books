@@ -2,6 +2,9 @@ const express=require('express');
 const router=express.Router();
 const auth=require('../controllers/auth')
 const authmiddleware=require('../middlewares/authorization')
+const uploadmiddleware=require('../middlewares/multer');
+const cloudinary=require('../middlewares/cloudinary')
+const bookinfo=require('../controllers/bookinfo')
 
 
 
@@ -25,6 +28,10 @@ router.post('/register',auth.registeruser);
 router.get('/home',authmiddleware,(req,res)=>{
     res.render('homepage')
 });
+
+
+router.post('/upload-bookinfo',uploadmiddleware.single('image'),bookinfo.bookdetails_upload);
+
 
 
 module.exports=router;

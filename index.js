@@ -9,6 +9,7 @@ const cookieParser=require('cookie-parser');
 //const router=express.Router();
 
 
+//app.use(express.json());
 app.engine('dust', dust.engine(useHelpers=true));
 app.set('view engine', 'dust');
 app.set('views', path.join(__dirname,'/views'));
