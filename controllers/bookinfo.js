@@ -9,7 +9,8 @@ const bookdetails_upload=async (req,res)=>
         
     try{
         const filepath=req.file.path;
-    const image_url=await cloudinary.upload_file(filepath).secure_url;
+    const image_url=await cloudinary.upload_file(filepath);
+    console.log(image_url.secure_url);
             
         
 
@@ -29,8 +30,11 @@ const bookdetails_upload=async (req,res)=>
    const  insert_publisher_query=`Insert into publishers(publisher_name) values($1)`;
     const insert_publisher_value=[publisher_name];
 
+
+    //Have to make changes here as cookie.user_id gives currently logged in user id
     const listed_by_id=[1];//[req.cookie.user_id];
-    const listed_by_query=`Select username from users where user_id=$1`;
+    const listed_by_user_id=1;
+   // const listed_by_query=`Select user_id from users where user_id=$1`;
 
     await pool.query(insert_author_query,insert_author_value);
     await pool.query(insert_publisher_query,insert_publisher_value);
@@ -40,18 +44,21 @@ const bookdetails_upload=async (req,res)=>
     const author_id=author_inf.rows[0].author_id;
     const publisher_id=publisher_inf.rows[0].publisher_id;
    
-    const listed_by=await pool.query(listed_by_query,listed_by_id);
+    //const listed_by=await pool.query(listed_by_query,listed_by_id); 
+    //The method to execute listed_by id in book has to be resolved further and 
+    //the listed_by_query code line is written above
     
 
 
     const wholeinfo_query=`Insert into books(title,isbn_number,edition,current_condition,
     description,price,listed_by,author_id,
     publisher_id,is_availiable,image_url,category) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)`;
-    const wholeinfo_value=[title,isbn,edition,current_condition,description,price,listed_by.rows[0].listed_by,author_id,publisher_id,is_availiable,image_url,category];
+    const wholeinfo_value=[title,isbn,edition,current_condition,description,price,listed_by_user_id,author_id,publisher_id,is_availiable,image_url.secure_url,category];
 
 
     await pool.query(wholeinfo_query,wholeinfo_value);
-    res.send(201).json({message:"Books updated successfully"});
+    console.log("Second last line");
+    res.status(201).json({message:"Books updated successfully"});
 
     }
 
