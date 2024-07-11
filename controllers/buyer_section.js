@@ -7,12 +7,24 @@ const place_orders=async (req,res)=>{
 
 try{
     const {book_id}=req.params;
+    const {quantity}=req.body;
 
-    console.log(book_id);
+    //console.log(book_id);
+    console.log(quantity);
 
 const buyer_id=req.cookies.user_id;
-
 console.log(buyer_id);
+
+const is_availiable_query=`select availiable_quantity from books where book_id=$1`;
+const is_availiablee=await pool.query(is_availiable_query,[book_id])
+const is_availiable=is_availiablee.rows;
+
+console.log(is_availiable[0].availiable_quantity);
+
+if(quantity>is_availiable[0].availiable_quantity)
+{
+    throw new Error("Out of Stock");
+}
 
 const seller_idd=await pool.query(`Select listed_by from books where book_id=$1`,[book_id]);
 const seller_id=seller_idd.rows[0];
@@ -37,13 +49,14 @@ const book_namee=await pool.query(`Select title from books where book_id=$1`,[bo
 
 const delivery_status='On Progress';//Might have to change the type as it can be changed tto shipped
 
+const total_price=quantity*book_price.price;
 
 const place_order_query=`Insert into orders(seller_id,buyer_id,book_id,book_name,delivery_location,
-receiver_contact,delivery_status,price)
-values($1,$2,$3,$4,$5,$6,$7,$8)`;
+receiver_contact,delivery_status,quantity,price)
+values($1,$2,$3,$4,$5,$6,$7,$8,$9)`;
 
 const place_order_values=[seller_id.listed_by,buyer_id,book_id,book_name.title,
-    delivery_location.address,receiver_contact.phone_number,delivery_status,book_price.price];
+    delivery_location.address,receiver_contact.phone_number,delivery_status,quantity,total_price];
 
 
  await pool.query(place_order_query,place_order_values);
@@ -53,10 +66,32 @@ res.status(201).json({message:"Orders received successfully"});
 catch(error)
 {
     console.log(error);
+    //console.error(error.message);
     res.status(500).json({error:"Values couldnot be inserted into orders"})
 }
 
 
+}
+
+
+
+
+const fetch_books_for_homepage=async (req,res)=>{
+
+try{
+    console.log("Beginning");
+    const book_fetch_query=`Select * from books`;
+    const book_fetch_values=await pool.query(book_fetch_query);
+    console.log(book_fetch_values.rows);
+
+    res.status(201).json({message:"Books have been fetched successfully"});
+}
+catch(error)
+{
+    console.log(error);
+}
+
+    
 }
 
 
@@ -81,4 +116,139 @@ const my_orders=async (req,res)=>{
 
 }
 
-module.exports={place_orders,my_orders};
+
+const cancel_orders=async (req,res)=>{
+
+    try{
+        
+        const user_id=req.cookies.user_id;
+        const {order_id}=req.params;
+        const delivery_status="Cancelled";
+
+    const cancel_order_query=`Update  orders set delivery_status=$1 where order_id=$2`;
+    await pool.query(cancel_order_query,[delivery_status,order_id]);
+
+    res.status(201).json({message:"Order cancelled successfully"});
+
+    }
+    catch(error)
+    {
+       console.log(error);
+    }
+
+}
+
+
+
+const add_to_cart=async (req,res)=>{
+
+    try{
+        const {book_id}=req.params;
+    const user_id=req.cookies.user_id;
+    console.log(user_id);
+
+    const insert_into_cart_query=`Insert into cart(user_id,book_id) values($1,$2)`;
+    const cart_values=await pool.query(insert_into_cart_query,[user_id,book_id]);
+
+    
+    
+
+
+    res.status(201).json({message:"Successfully added to cart"});
+    }
+
+    catch(error)
+    {
+        console.log(error);
+    }
+    
+
+
+
+}
+
+
+const fetch_cart=async (req,res)=>{
+
+    try{
+        const user_id=req.cookies.user_id;
+
+
+    const fetch_cart_query=`Select * from cart where user_id=$1`;
+    const cart_values=await pool.query(fetch_cart_query,[user_id]);
+
+    console.log(cart_values.rows);
+
+    const book_idd=cart_values.rows;
+ 
+
+     //Consider commented values below later
+
+    // const book_data_query=`Select * from books where book_id=$1`;
+    // const book_dataa=await pool.query(book_data_query,[book_id]).rows;
+    // const book_name=book_dataa.title;
+    // const book_image=book_dataa.image_url;
+    // const book_price=book_dataa.price;
+
+
+    res.status(201.).json({message:"Cart fetch Successful"});
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+
+}
+
+
+
+
+const sort_by_category=async (req,res)=>{
+
+try{
+    const {category}=req.params;
+    console.log(category);
+
+
+    const sort_by_category_query=`Select * from books  where category=$1`;
+    const sort_by_category_values=await pool.query(sort_by_category_query,[category]);
+    console.log(sort_by_category_values.rows);
+
+    res.status(201).json({message:"The sorted items by category have been received sucessfully"});
+}
+catch(error)
+{
+    console.log(error);
+}
+   
+}
+
+
+const sort_by_price=async (req,res)=>{
+
+    try{
+        
+    
+    
+        const sort_by_price_query=`Select * from books order by price asc`;
+        const sort_by_price_values=await pool.query(sort_by_price_query);
+        console.log(sort_by_price_values.rows);
+    
+        res.status(201).json({message:"The sorted items by price have been received sucessfully"});
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+       
+    }
+
+// const review_handling=(req,res)=>{
+
+//     const {rating}=req.body;
+//     const book_id=req.params
+//     const insert_rating_query=`Insert into reviews(ratings) values($1)`;
+//     const insert_rating_value=[rating];
+// }
+
+module.exports={place_orders,my_orders,cancel_orders,sort_by_category,sort_by_price,fetch_cart,fetch_books_for_homepage,add_to_cart};

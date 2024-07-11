@@ -17,7 +17,7 @@ const bookdetails_upload=async (req,res)=>
 
 
 
-    const {title,isbn,edition=null,current_condition,description,price,is_availiable,category}=req.body;
+    const {title,isbn,edition=null,current_condition,description,price,availiable_quantity,category}=req.body;
      
 
     const author_name=req.body.author_name;
@@ -32,8 +32,9 @@ const bookdetails_upload=async (req,res)=>
 
 
     //Have to make changes here as cookie.user_id gives currently logged in user id
-    const listed_by_id=[1];//[req.cookie.user_id];
-    const listed_by_user_id=1;
+    const listed_by_user_id=req.cookies.user_id;
+    //console.log(listed_by_user_id);
+    //const listed_by_user_id=1;
    // const listed_by_query=`Select user_id from users where user_id=$1`;
 
     await pool.query(insert_author_query,insert_author_value);
@@ -52,8 +53,8 @@ const bookdetails_upload=async (req,res)=>
 
     const wholeinfo_query=`Insert into books(title,isbn_number,edition,current_condition,
     description,price,listed_by,author_id,
-    publisher_id,is_availiable,image_url,category) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)`;
-    const wholeinfo_value=[title,isbn,edition,current_condition,description,price,listed_by_user_id,author_id,publisher_id,is_availiable,image_url.secure_url,category];
+    publisher_id,availiable_quantity,image_url,category) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)`;
+    const wholeinfo_value=[title,isbn,edition,current_condition,description,price,listed_by_user_id,author_id,publisher_id,availiable_quantity,image_url.secure_url,category];
 
 
     await pool.query(wholeinfo_query,wholeinfo_value);

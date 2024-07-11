@@ -43,7 +43,7 @@ try{
                     res.cookie('authToken',authToken,{httpOnly: true,sameSite: 'None', secure: true})
 
 
-                    res.status(200).json(sendResponse(true, 'login Successful'));
+                    //res.status(200).json({message:"Login Successful"});
                     res.redirect('/home');
                 }
         }
@@ -61,8 +61,11 @@ catch(error)
 
 const registeruser=async(req,res)=>{
 
-    const{ username,email,password}=req.body;
-    const{firstname,lastname,phonenumber,address,isseller}=req.body;
+    const {username,email,password}=req.body;
+    const {firstname,lastname,phonenumber,address,isseller}=req.body;
+    console.log(username);
+    console.log(email);
+    console.log(password);
 
     const checkquery='Select * from users where username=$1 or email=$2';
     const checkvalues=[username,email];
@@ -90,7 +93,7 @@ const registeruser=async(req,res)=>{
 
    catch(error)
    {
-       console.log("Some error occured");
+       console.log(error);
    }
 
 
