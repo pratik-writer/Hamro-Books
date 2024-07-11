@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../../../src/output.css">
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="sticky top-0 w-full bg-white shadow-md z-50 py-4 px-10">
+        <div class=" flex items-center justify-between">
+            <div id="firstdiv" class="flex items-center">
+                <img src="../images/hamro-books-high-resolution-logo-transparent.png" alt="logo of hamro books"
+                    class="h-auto w-44">
+            </div>
+            <div class="w-full max-w-xl relative flex">
+                <span class="absolute left-4 top-3 text-lg text-gray-400">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <input type="text" name="search" id="search"
+                    class="w-full border border-gray-800 border-r-0 pl-12 py-3 pr-3 rounded-l-md focus:outline-none hidden md:flex"
+                    placeholder="search">
+                <button class="bg-gray-800 border border-gray-800 text-white px-8 rounded-r-md">Search</button>
+            </div>
+            <div id="thirddiv" class="flex items-start justify-center space-x-6">
+                <div id="wishlist" class="flex-col cursor-pointer">
+                    <i class="fa-solid fa-heart ml-4"></i>
+                    <p>Wishlist</p>
+                </div>
+                <div class="flex-col items-center justify-center cursor-pointer">
+                    <i class="fa-solid fa-cart-shopping ml-1"></i>
+                    <p class="text-center">Cart</p>
+                </div>
+                <div class=" flex-col items-center justify-center cursor-pointer">
+                    <i class="fa-solid fa-child ml-4"></i>
+                    <p>Account</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header -->
+
+
+
+    <!--Navbar-->
+
+    <nav class="fixed top-16 left-0 right-0 bg-gray-800 text-white z-50 mb-28">
+        <div class="flex items-center">
+            <div class="px-8 py-4 md:flex items-center cursor-pointer relative group hidden">
+                <span class="text-white">
+                    <i class="fa-solid fa-bars"></i>
+                </span>
+                <p class="text-white ml-2">All Categories</p>
+
+                <!-- dropdown -->
+                <div
+                    class="absolute w-full left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">
+                    <a href="#" class="flex items-center px-6 py-1 hover:bg-gray-100 transition">
+                        <span class="ml-6 text-gray-600 text-sm">Academic</span>
+                    </a>
+                    <a href="#" class="flex items-center px-6 py-1 hover:bg-gray-100 transition">
+                        <span class="ml-6 text-gray-600 text-sm">Poetry</span>
+                    </a>
+                    <a href="#" class="flex items-center px-6 py-1 hover:bg-gray-100 transition">
+                        <span class="ml-6 text-gray-600 text-sm">Self Help</span>
+                    </a>
+                    <a href="#" class="flex items-center px-6 py-1 hover:bg-gray-100 transition">
+                        <span class="ml-6 text-gray-600 text-sm">Comedy</span>
+                    </a>
+                    <a href="#" class="flex items-center px-6 py-1 hover:bg-gray-100 transition">
+                        <span class="ml-6 text-gray-600 text-sm">Spiritual</span>
+                    </a>
+                    <a href="#" class="flex items-center px-6 py-1 hover:bg-gray-100 transition">
+                        <span class="ml-6 text-gray-600 text-sm">Non Fiction</span>
+                    </a>
+                    <a href="#" class="flex items-center px-6 py-1 hover:bg-gray-100 transition">
+                        <span class="ml-6 text-gray-600 text-sm">Biograpy</span>
+                    </a>
+                    <a href="#" class="flex items-center px-6 py-1 hover:bg-gray-100 transition">
+                        <span class="ml-6 text-gray-600 text-sm">Science Fiction</span>
+                    </a>
+                    <a href="#" class="flex items-center px-6 py-1 hover:bg-gray-100 transition">
+                        <span class="ml-6 text-gray-600 text-sm">Others</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between  py-5 pl-10">
+                <div class="flex items-center space-x-6 capitalize">
+                    <a href="#" class="text-gray-200 hover:text-white transition">Home</a>
+                    <a href="#" class="text-gray-200 hover:text-white transition">Shop</a>
+                    <a href="#" class="text-gray-200 hover:text-white transition">About us</a>
+                    <a href="#" class="text-gray-200 hover:text-white transition">Contact us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--Navbar End-->
+
+    <!--Banner-->
+    <div class=" mx-12">
+        <img src="../images/banner.png" class='mx-12'>
+    </div>
+    <!--Banner End-->
+
+    <!--Categories-->
+    <div class="bg-white p-16 ">
+        <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">shop by category</h2>
+        <div class="grid grid-cols-3 gap-3">
+            <div class="relative rounded-sm overflow-hidden group ">
+                <img src="../images/categories/novel.jpg" alt="category 1" class="w-full">
+                <a href="#"
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Poetry</a>
+            </div>
+            <div class="relative rounded-sm overflow-hidden group">
+                <img src="../images/categories/academic.jpg" alt="category 1" class="w-full">
+                <a href="#"
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Academic</a>
+            </div>
+            <div class="relative rounded-sm overflow-hidden group ">
+                <img src="../images/categories/comedy.jpg" alt="category 1" class="w-full">
+                <a href="#"
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Comedy</a>
+            </div>
+            <div class="relative rounded-sm overflow-hidden group ">
+                <img src="../images/categories/selfhelp.jpeg" alt="category 1" class="h-full object-cover w-full">
+                <a href="#"
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Self
+                    Help</a>
+            </div>
+            <div class="relative rounded-sm overflow-hidden group">
+                <img src="../images/categories/bio.png" alt="category 1" class="w-full h-full">
+                <a href="#"
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Biography</a>
+            </div>
+            <div class="relative rounded-sm overflow-hidden group">
+                <img src="../images/categories/spiritual.jpg" alt="category 1" class="w-full">
+                <a href="#"
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Spiritual</a>
+            </div>
+
+
+        </div>
+        <!--Categories End-->
+
+
+        <!-- new arrival -->
+
+        <div class="bg-white pt-16">
+            <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">top new arrival</h2>
+            <div class="grid grid-cols-4 gap-3">
+                <div class="bg-white shadow rounded overflow-hidden group">
+                    <div class="relative">
+                        <img src="../images/categories/fireandice.jpg" alt="product 1" class="w-full h-full">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
+                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+                            <a href="#"
+                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                title="add to wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-3 px-4">
+                        <a href="#">
+                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
+                                song of ice and fire</h4>
+                        </a>
+                    </div>
+                    <a href="#"
+                        class="block w-full py-1 text-center text-white bg-gray-800 border border-gray-800 rounded-b hover:bg-transparent hover:text-black hover:text-primary transition">Add
+                        to cart</a>
+                </div>
+
+                <div class="bg-white shadow rounded overflow-hidden group">
+                    <div class="relative">
+                        <img src="../images/categories/Engineering-Mathematics-I.jpg" alt="product 1"
+                            class="w-full h-full">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
+                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+                            <a href="#"
+                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                title="add to wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-3 px-4">
+                        <a href="#">
+                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
+                                Engineering Mathematics - I </h4>
+                        </a>
+                    </div>
+                    <a href="#"
+                        class="block w-full py-1 text-center text-white bg-gray-800 border border-gray-800 rounded-b hover:bg-transparent hover:text-black hover:text-primary transition">Add
+                        to cart</a>
+                </div>
+                <div class="bg-white shadow rounded overflow-hidden group">
+                    <div class="relative">
+                        <img src="../images/categories/fireandblood.jpg" alt="product 1" class="w-full ">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
+                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+                            <a href="#"
+                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                title="add to wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-3 px-4">
+                        <a href="#">
+                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
+                                Fire and Blood</h4>
+                        </a>
+                    </div>
+                    <a href="#"
+                        class="block w-full py-1 text-center text-white bg-gray-800 border border-gray-800 rounded-b hover:bg-transparent hover:text-black hover:text-primary transition">Add
+                        to cart</a>
+                </div>
+                <div class="bg-white shadow rounded overflow-hidden group">
+                    <div class="relative">
+                        <img src="../images/categories/2states.jpeg" alt="product 1" class="w-full h-full">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
+                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+                            <a href="#"
+                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                title="add to wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-3 px-4">
+                        <a href="#">
+                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">2
+                                States</h4>
+                        </a>
+                    </div>
+                    <a href="#"
+                        class="block w-full py-1 text-center text-white bg-gray-800 border border-gray-800 rounded-b hover:bg-transparent hover:text-black hover:text-primary transition">Add
+                        to cart</a>
+                </div>
+            </div>
+        </div>
+
+        <!--End of new arrival -->
+
+
+        <!--Recommended for you -->
+        <div class="bg-white pt-16">
+            <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">Recommended for you</h2>
+            <div class="grid grid-cols-4 gap-4">
+                <div class="bg-white shadow rounded overflow-hidden group">
+                    <div class="relative">
+                        <img src="../images/categories/recommended/dsa.jpg" alt="product 1" class="w-full ">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
+                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+                            <a href="#"
+                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                title="add to wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-3 px-4">
+                        <a href="#">
+                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
+                                data structure & algorithm</h4>
+                        </a>
+                    </div>
+                    <a href="#"
+                        class="block w-full py-1 text-center text-white bg-gray-800 border border-gray-800 rounded-b hover:bg-transparent hover:text-black hover:text-primary transition">Add
+                        to cart</a>
+                </div>
+                <div class="bg-white shadow rounded overflow-hidden group">
+                    <div class="relative">
+                        <img src="../images/categories/recommended/munamadan.jpg" alt="product 1" class="w-full h-full">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
+                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+                            <a href="#"
+                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                title="add to wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-3 px-4">
+                        <a href="#">
+                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
+                                Muna madan </h4>
+                        </a>
+                    </div>
+                    <a href="#"
+                        class="block w-full py-1 text-center text-white bg-gray-800 border border-gray-800 rounded-b hover:bg-transparent hover:text-black hover:text-primary transition">Add
+                        to cart</a>
+                </div>
+
+                <div class="bg-white shadow rounded overflow-hidden group">
+                    <div class="relative">
+                        <img src="../images/categories/recommended/abraham.jpg" alt="product 1" class="w-full h-full">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
+                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+                            <a href="#"
+                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                title="add to wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-3 px-4">
+                        <a href="#">
+                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
+                                Abraham lincoln</h4>
+                        </a>
+                    </div>
+                    <a href="#"
+                        class="block w-full py-1 text-center text-white bg-gray-800 border border-gray-800 rounded-b hover:bg-transparent hover:text-black hover:text-primary transition">Add
+                        to cart</a>
+                </div>
+                <div class="bg-white shadow rounded overflow-hidden group">
+                    <div class="relative">
+                        <img src="../images/categories/fireandice.jpg" alt="product 1" class="w-full h-full">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
+                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+                            <a href="#"
+                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                title="add to wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-3 px-4">
+                        <a href="#">
+                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
+                                song of ice and fire</h4>
+                        </a>
+                    </div>
+                    <a href="#"
+                        class="block w-full py-1 text-center text-white bg-gray-800 border border-gray-800 rounded-b hover:bg-transparent hover:text-black hover:text-primary transition">Add
+                        to cart</a>
+                </div>
+                <div class="bg-white shadow rounded overflow-hidden group">
+                    <div class="relative">
+                        <img src="../images/categories/recommended/reinception.jpg" alt="product 1"
+                            class="w-full h-full">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
+                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+                            <a href="#"
+                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                title="add to wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-3 px-4">
+                        <a href="#">
+                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
+                                ReInception</h4>
+                        </a>
+                    </div>
+                    <a href="#"
+                        class="block w-full py-1 text-center text-white bg-gray-800 border border-gray-800 rounded-b hover:bg-transparent hover:text-black hover:text-primary transition">Add
+                        to cart</a>
+                </div>
+                <div class="bg-white shadow rounded overflow-hidden group">
+                    <div class="relative">
+                        <img src="../images/categories/recommended/mahabir.jpg" alt="product 1" class="w-full h-full">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
+                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+                            <a href="#"
+                                class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                title="add to wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-3 px-4">
+                        <a href="#">
+                            <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
+                                mahabir pun</h4>
+                        </a>
+                    </div>
+                    <a href="#"
+                        class="block w-full py-1 text-center text-white bg-gray-800 border border-gray-800 rounded-b hover:bg-transparent hover:text-black hover:text-primary transition">Add
+                        to cart</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!--end of recommendations-->
+
+        <!-- footer -->
+        <footer class="bg-white pt-16 pb-12 border-t border-gray-100 mt-6">
+            <div class="container grid grid-cols-1 ">
+                <div class="col-span-1 space-y-4">
+                    <img src="../images/hamro-books-high-resolution-logo-transparent.png" alt="logo" class="w-1/5">
+                    <div class="mr-2">
+                        <p class="text-gray-500">
+                            Connecting readers with the books they love
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- ./footer -->
+
+        <!-- copyright -->
+        <div class="bg-gray-800 p-3 rounded-sm">
+            <div class="container flex items-center justify-between">
+                <p class="text-white">&copy; Hamro Books - All Right Reserved</p>
+
+            </div>
+        </div>
+
+        <!-- ./copyright -->
+</body>
+
+</html>
