@@ -36,7 +36,7 @@ router.post("/buy_book/:book_id",authmiddleware,buyer_section_order.place_orders
 router.post("/cancel_orders/:order_id",authmiddleware,buyer_section_order.cancel_orders);
 router.get("/my_orders",authmiddleware,buyer_section_order.my_orders);
 router.get("/sort_by_category/:category",authmiddleware,buyer_section_order.sort_by_category);
-router.get("/homepage",authmiddleware,buyer_section_order.fetch_books_for_homepage);
+router.get("/buyer_homepage",authmiddleware,buyer_section_order.fetch_books_for_homepage);
 router.get("/add_to_cart/:book_id",authmiddleware,buyer_section_order.add_to_cart);
 router.get("/remove_from_cart/:book_id",authmiddleware,buyer_section_order.remove_from_cart);
 router.get("/fetch_cart",authmiddleware,authmiddleware,buyer_section_order.fetch_cart);

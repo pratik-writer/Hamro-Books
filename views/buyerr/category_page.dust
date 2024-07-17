@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Object Oriented Programming</title>
+    <title>Book Categories</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <!-- custom css styles  -->
-	<style>
+    <!-- custom css  -->
+    <style>
 	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
 :root{--black:#000;--white:#fff;--gray:#808080;--light-gray:#d3d3d3;--dark-gray:#a9a9a9;--red:#f00;--light-red:#f66;--dark-red:#8b0000;--green:#008000;--light-green:#90ee90;--dark-green:#006400;--blue:#00f;--light-blue:#add8e6;--dark-blue:#00008b;--yellow:#ff0;--light-yellow:#ffffe0;--dark-yellow:#ffd700;--orange:#ffa500;--light-orange:#ffcc99;--dark-orange:#ff4500;--purple:#800080;--light-purple:#dda0dd;--dark-purple:#4b0082;--pink:#ffc0cb;--light-pink:#ffb6c1;--dark-pink:#ff1493;--brown:#a52a2a;--light-brown:#bc8f8f;--dark-brown:#5d4037;--cyan:#0ff;--light-cyan:#e0ffff;--dark-cyan:#008b8b;--magenta:#f0f;--light-magenta:#f6f;--dark-magenta:#8b008b;--teal:#008080;--light-teal:#20b2aa;--dark-teal:#005757;--navy:#000080;--light-navy:#5f9ea0;--dark-navy:#00004b;--dark-color:#219150;--light-color:#666;--border:.1rem solid rgba(0,0,0,.1);--border-hover:.1rem solid var(--black);--box-shadow:0 .5rem 1rem rgba(0,0,0,.1);}
@@ -211,159 +211,86 @@ body {
 /*header section ends*/
 
 
-/* Product Section Starts */
-.small-container{
-    margin:2em;
-    
-}
-.single-product{
-    padding-top:60px;
-    padding-bottom:50px;
-    background:white;
-}
-.single-product .row{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-}
-/* .single-product .col-2 {
-    margin-left:6rem;
-    
-} */
-.single-product .col-1, .single-product .col-2 {
-    flex: 1;
-    padding: 0 55px;
-}
-.single-product h4{
-    margin:20px 0;
-    font-size:22px;
-    font-weight:bold;
-    
-}
-.quantity{
-    display:flex;
 
+/* Category Section Starts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.category {
+    padding: 20px;
+    background-color: #f7f7f7;
 }
 
-.quantity-container {
-    display: flex;
-    align-items: center;
-    margin-bottom:10px;
-}
-.categories
-{
-    font-size:2em;
-    margin-top:20px;
-    margin-bottom:5px;
-}
-.Academics{
-    font-size:2em;
-    cursor:pointer;
-}
-.quantity-container h1 {
-    margin-right: 10px; /* Adjust margin as needed */
-}
-
-.quantity-container input[type="number"] {
-    padding-left:5px;
-    font-size:20px;
-    margin-right:20px;
-   border:2px solid black;
-   border-radius: 10%; /* Makes the border circular */
-   width: 80px; /* Adjust as needed */
-   height: 40px;
-   text-align: center;
-}
-.availablequantity-container h1 {
-    margin-top:15px;
-    margin-right: 10px; /* Adjust margin as needed */
-}
-.isbn
-{
-    font-size:20px;
-}
-
-
-input:focus{
-    outline:none;
-}
-.single-product .row .col-2 .category{
-    font-size:15px;
-    margin-bottom:5px;
-    cursor:pointer;
-}
-.product-description{
-    font-size:18px;
-    margin-top:4px;
-    text-align: justify;
-}
-.productdetails{
-    font-size:20px;
-    margin-top:2rem;
-}
-.btn i {
-    margin-right: 4px; 
-}
-.buy-btn {
-    background-color: #007bff; /* Blue background */
-    margin-left:5px;
-}
-
-.buy-btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-.buynow
-{
-    margin-left:2rem;
-}
-
-.input{
-    font-size:20px;
-    display:flex;
-}
-
-
-.small-container .col-1 {
-    background: #fff;
-    border: var(--border); 
-     border-radius: .5rem; 
-    box-shadow: var(--box-shadow);
-    overflow: hidden;
+.category-heading-box {
+    margin-bottom: 20px; 
+    background-color: #ddd;
+    padding: 10px;
     text-align: center;
-    width: 30rem;
-    padding: 2rem;
+}
+.category-heading {
+    font-size: 24px;
+    color: #333;
+}
+.swiper-slider {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.category-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.swiper-slide {
+    flex: 0 0 calc(15% - 20px);
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.swiper-slide:hover {
+    transform: translateY(-5px);
 }
 
-.small-container .col-1:hover {
-    border: var(--border-hover);
+.image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
 }
-
-.small-container .col-1 img {
-    /* width: 82%; */
-    max-height:550px; /* Adjust this value as needed */
-    object-fit: contain;
-    margin-left:50px;
+.content {
+    padding: 10px;
+    text-align: center;
 }
-
-.small-container .col-1:hover img {
-    transform: scale(1.05);
+.content h3 {
+    margin: 10px 0;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
 }
-
-/* Product Section ends */
-/* Styles for the added-to-cart message */
-    .added-to-cart-message {
-        position: fixed;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: rgba(0, 128, 0, 0.8);
-        color: white;
-        padding: 20px; /* Increase padding to make message larger */
-        font-size: 1.6rem; /* Increase font size */
-        border-radius: 5px;
-        z-index: 1000;
+@media (max-width: 1200px) {
+    .swiper-slide {
+        flex: 0 0 calc(33.33% - 20px); 
     }
+}
+@media (max-width: 992px) {
+    .swiper-slide {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+@media (max-width: 576px) {
+    .swiper-slide {
+        flex: 0 0 calc(100% - 20px);
+        margin-right: 0;
+    }
+}
+/* Category Section ends */
+
+
 
 /*footer section starts*/
 .footer .box-container{
@@ -421,8 +348,7 @@ input:focus{
     color: var(--magenta);
 }
 /*footer section ends*/
-
-</style>
+	</style>
 	
 	<!-- icons for various mobile and desktop platforms  -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
@@ -438,16 +364,16 @@ input:focus{
 
     <div class="header-1">
 
-        <a href="homepage.html" class="logo"><img src="https://github.com/PunksB1602/images/blob/main/logo.png?raw=true" alt="Logo">Hamro Books </a>
+        <a href="/buyer_homepage" class="logo"><img src="https://github.com/PunksB1602/images/blob/main/logo.png?raw=true" alt="Logo">Hamro Books </a>
 
-        <form action="" class="search-form">
-            <input type="search" name="" placeholder="search here..." id="search-box">
+        <form action="/search" class="search-form">
+            <input type="search" name="search_keyword" placeholder="search here..." id="search-box">
             <label for="search-box" class="fas fa-search"></label>
         </form>
 
         <div class="icons">
             <div id="search-btn" class="fas fa-search"></div>
-            <a href="./cart.html" class="fas fa-shopping-cart"></a>
+            <a href="/fetch_cart" class="fas fa-shopping-cart"></a>
             <div id="login-btn" class="fas fa-user"></div>
         </div>
 
@@ -455,10 +381,10 @@ input:focus{
 
     <div class="header-2">
         <nav class="navbar">
-            <a href="homepage.html">home</a>
-            <a href="#featured">featured</a>
-            <a href="category.html">category</a>
-            <a href="#reviews">reviews</a>
+            <a href="/buyer_homepage">home</a>
+            <a href="/buyer_homepage#featured">featured</a>
+            <a href="/buyer_homepage#vategories">category</a>
+            <a href="/my_orders">My Orders</a>
         </nav>
     </div>
 
@@ -468,108 +394,39 @@ input:focus{
 
 
 
-<!-- Product Section starts -->
-<div class="small-container single-product">
-    <div class="row">
-        <div class="col-1">
-            <img src="https://github.com/PunksB1602/book-images/blob/main/Object%20Oriented%20Programming.png?raw=true"
-                alt="" width="100%">
-        </div>
-        <div class="col-2 product" data-id="1">
-            <h1 class="product-name">A Text Book of Object Oriented Programming</h1>
-            <h4 class="product-price">Rs. 300</h4>
-            <div class="quantity-container">
-                <h1>Quantity to Buy:</h1>
-                <input type="number" value="1" min="1" class="product-quantity">
-            </div>
-            <a href="#" class="btn addToCart"><i class="fas fa-shopping-cart"></i> Add To Cart</a>
-            <a href="#" class="btn buy-btn"><i class="fas fa-shopping-bag"></i> Buy Now</a>
-            <h1 class="productdetails">Product Description:</h1>
-            <p class="product-description">Discover the essentials of Object-Oriented Programming with our comprehensive guide. Perfect for developers and students alike, this book covers inheritance, polymorphism, encapsulation, and more. Includes hands-on projects and best practices for creating scalable, efficient code.</p>
-            <h1 class="categories">Category:</h1>
-            <p class="Academics">Academics</p>
-            <div class="availablequantity-container">
-                <h1>Available Quantity:</h1>
-                <input type="text" value="5" class="input">
-            </div>
-            <div class="availablequantity-container">
-                <h1>ISBN Number:</h1>
-                <p class="isbn"> 978-3-16-148410-0</p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Product Section ends -->
+<!-- category section starts-->
+<section class="category" id="category">
 
-<!-- JavaScript to handle adding to cart -->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const addToCartButtons = document.querySelectorAll('.addToCart');
+    <h1 class="heading"> <span>Category</span> </h1>
+	
+    <!-- Academics -->
+		<div class="category-heading-box">
+        {#category}
+			<h2 class="category-heading">{category}</h2>
+            {/category}
+		</div>
+		<div class="category-group">
+			<div class="swiper-slider">
+            {#books}
+				<a href="/product_description/{book_id}" class="swiper-slide box">
+					<div class="image">
+						<img src="{image_url}" alt="Academics">
+					</div>
+                <div class="content">
+                    <h3>{title}</h3>
+                </div>
+				</a>
+			{/books}
+			</div>
+		</div>
 
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent default behavior of anchor tag (navigation)
-            
-            // Retrieve product details from the button's parent element
-            const productElement = event.target.closest('.product');
-            const productId = productElement.getAttribute('data-id');
-            const productName = productElement.querySelector('.product-name').textContent;
-            const productPrice = productElement.querySelector('.product-price').textContent.replace('Rs. ', '');
-            const productQuantity = productElement.querySelector('.product-quantity').value;
-
-            // Add item to cart
-            addToCart(productId, productName, productPrice, productQuantity);
-
-            // Show a message that the item has been added to the cart
-            showAddedToCartMessage();
-        });
-    });
-
-    function addToCart(id, name, price, quantity) {
-        // Retrieve existing cart items from localStorage
-        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-
-        // Check if the item already exists in the cart
-        const existingItemIndex = cartItems.findIndex(item => item.id === id);
-
-        if (existingItemIndex > -1) {
-            // Update quantity if item already exists
-            cartItems[existingItemIndex].quantity += parseInt(quantity);
-        } else {
-            // Add new item if it doesn't exist
-            const newItem = {
-                id: id,
-                name: name,
-                price: parseFloat(price),
-                quantity: parseInt(quantity)
-            };
-            cartItems.push(newItem);
-        }
-
-        // Store updated cartItems back in localStorage
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    }
-
-    function showAddedToCartMessage() {
-        // Create and display a message element
-        const message = document.createElement('div');
-        message.classList.add('added-to-cart-message');
-        message.textContent = 'This item has been added to your cart';
-
-        // Append message to body or any specific container you want
-        document.body.appendChild(message);
-
-        // Optional: Remove message after a few seconds
-        setTimeout(() => {
-            message.remove();
-        }, 3000); // Remove after 3 seconds (adjust as needed)
-    }
-});
-</script>
+	
+	
+</section>
+<!--category section ends-->
 
 
-
- <!-- footer section starts  -->
+<!-- footer section starts  -->
 
 <section class="footer">
 
@@ -592,9 +449,11 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="box">
             <h3>contact info</h3>
             <a href="#"> <i class="fas fa-phone"></i> 9843787118 </a>
-            <a href="#"> <i class="fas fa-phone"></i> 9865920096 </a>
+            <a href="#"> <i class="fas fa-phone"></i> 9867404111 </a>
+			<a href="#"> <i class="fas fa-phone"></i> 9865920096 </a>
             <a href="https://mail.google.com/"> <i class="fas fa-envelope"></i>gautamsubham65@gmail.com</a>
-            <a href="https://mail.google.com/"> <i class="fas fa-envelope"></i>pankajbhatt16@hotmail.com</a>
+			<a href="https://mail.google.com/"> <i class="fas fa-envelope"></i>pratikpokhrel14@gmail.com</a>
+            <a href="https://mail.google.com/"> <i class="fas fa-envelope"></i>pankajbhattcoc16@gmail.com</a>
             <img src="https://github.com/PunksB1602/book-images/blob/main/map.png?raw=true" class="map" alt="">
         </div>
 
@@ -608,7 +467,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <a href="https://www.linkedin.com" target="_blank"><img src="https://github.com/PunksB1602/images/blob/main/linkedin_icon.png?raw=true" alt="LinkedIn"></a>
     </div>
 
-    <div class="credit"> created by <span>Pankaj Bhatt & Subham Gautam </span>copyright ©2024 all rights reserved! </div>
+    <div class="credit"> created by <span>Subham Gautam, Pratik Pokharel & Pankaj Bhatt </span> copyright ©2024 all rights reserved! </div>
 
 </section>
 

@@ -436,8 +436,8 @@ body {
 
     <div class="header-2">
         <nav class="navbar">
-            <a href="homepage.html">home</a>
-            <a href="#featured">featured</a>
+            <a href="/buyer_homepage">home</a>
+            <a href="/buyer_homepage#featured">featured</a>
             <a href="category.html">category</a>
             <a href="/my_orders">My Orders</a>
         </nav>

@@ -122,11 +122,11 @@ const my_orders=async (req,res)=>{
     try{
         const my_id=req.user_id;
 
-    const my_orders_select_query=`Select * from orders where buyer_id=$1`;
+    const my_orders_select_query=`Select books.*,orders.* from orders  join books on orders.book_id=books.book_id where buyer_id=$1`;
     const my_orders_list=await pool.query(my_orders_select_query,[my_id]);
 
     console.log(my_orders_list.rows);
-    res.status(201).json({message:"My Orders fetched successfully"});
+    res.render("buyerr/my_orders",{orders:my_orders_list.rows});
 
     }
     catch(error)
@@ -265,7 +265,7 @@ try{
     const sort_by_category_values=await pool.query(sort_by_category_query,[category]);
     console.log(sort_by_category_values.rows);
 
-    res.render('category_page',{books:sort_by_category_values.rows});
+    res.render('buyerr/category_page',{books:sort_by_category_values.rows,category:category});
 }
 catch(error)
 {
