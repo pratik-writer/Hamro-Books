@@ -39,12 +39,19 @@ try{
                     return (res.status(200).json(sendResponse(false, 'Email and password are not matching')));
                 }
                 else{
-                    const authToken=jwt.sign({userid:user.user_id},process.env.JWT_SECRET_KEY,{expiresIn:'40m'})
+                    const authToken=jwt.sign({userid:user.user_id,is_seller:user.is_seller},process.env.JWT_SECRET_KEY,{expiresIn:'200m'})
                     res.cookie('authToken',authToken,{httpOnly: true,sameSite: 'None', secure: true})
 
 
                     //res.status(200).json({message:"Login Successful"});
-                    res.redirect('/home');
+
+                    if(user.is_seller)
+                    {
+                        res.redirect('/seller_home_page');
+                    }
+                    else{
+                        res.redirect('/buyer_homepage');
+                    }
                 }
         }
         else{

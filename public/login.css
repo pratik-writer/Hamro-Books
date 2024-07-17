@@ -1,0 +1,135 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: cyan;
+    opacity: 0.8; /* 80% opacity */;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-img {  
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url("https://github.com/PunksB1602/images/blob/main/login.jpg?raw=true");  
+    z-index: -1;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.4); /* 40% opacity */
+    padding: 120px;
+    border-radius: 70px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 450px;
+    z-index: 1;
+}
+
+.logo-img {
+    max-width: 220px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+button,
+.btn-fb {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    background-color: #f5f6f7;
+    border: 1px solid #dddfe2;
+}
+
+button,
+.btn-fb {
+    background-color: green;
+    color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover,
+.btn-fb:hover {
+    background-color: #166fe5;
+}
+
+.separator {
+    margin: 20px 0;
+    position: relative;
+}
+
+.separator:before,
+.separator:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.separator:before {
+    left: 0;
+}
+
+.separator:after {
+    right: 0;
+}
+
+.or {
+    background-color: #fff;
+    padding: 0 10px;
+    position: relative;
+    top: -11px;
+}
+
+.signup-link {
+    margin-top: 20px;
+}
+
+.signup-link a {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.error-msg {
+    color: #ff0000;
+    margin-top: 10px;
+}
+
+.signup-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 350px;
+}
+
+.signup-container .logo {
+    color: #3b5998;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}

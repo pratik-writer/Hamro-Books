@@ -9,10 +9,10 @@ try{
     const {book_id}=req.params;
     const {quantity}=req.body;
 
-    //console.log(book_id);
+    console.log(book_id);
     console.log(quantity);
 
-const buyer_id=req.cookies.user_id;
+const buyer_id=req.user_id;
 console.log(buyer_id);
 
 const is_availiable_query=`select availiable_quantity from books where book_id=$1`;
@@ -60,7 +60,8 @@ const place_order_values=[seller_id.listed_by,buyer_id,book_id,book_name.title,
 
 
  await pool.query(place_order_query,place_order_values);
-res.status(201).json({message:"Orders received successfully"});
+// res.status(201).json({message:"Orders received successfully"});
+res.redirect(`/remove_from_cart/${book_id}`);
 }
 
 catch(error)
@@ -75,6 +76,24 @@ catch(error)
 
 
 
+const book_description=async (req,res)=>{
+ try{
+    const {book_id}=req.params;
+    console.log(book_id);
+
+    const description_query=`Select * from books where book_id=$1`;
+    const book_values=await pool.query(description_query,[book_id]);
+
+    console.log(book_values.rows);
+
+    res.render('buyerr/product_descript',{books:book_values.rows});
+ }
+ catch(error)
+ {
+    console.log(error);
+ }
+}
+
 
 const fetch_books_for_homepage=async (req,res)=>{
 
@@ -84,7 +103,9 @@ try{
     const book_fetch_values=await pool.query(book_fetch_query);
     console.log(book_fetch_values.rows);
 
-    res.status(201).json({message:"Books have been fetched successfully"});
+    res.render('homepage',{books:book_fetch_values.rows});
+
+    // res.status(201).json({message:"Books have been fetched successfully"});
 }
 catch(error)
 {
@@ -99,7 +120,7 @@ const my_orders=async (req,res)=>{
 
 
     try{
-        const my_id=req.cookies.user_id;
+        const my_id=req.user_id;
 
     const my_orders_select_query=`Select * from orders where buyer_id=$1`;
     const my_orders_list=await pool.query(my_orders_select_query,[my_id]);
@@ -121,7 +142,7 @@ const cancel_orders=async (req,res)=>{
 
     try{
         
-        const user_id=req.cookies.user_id;
+        const user_id=req.user_id;
         const {order_id}=req.params;
         const delivery_status="Cancelled";
 
@@ -140,21 +161,44 @@ const cancel_orders=async (req,res)=>{
 
 
 
+
+const remove_from_cart=async (req,res)=>{
+
+   try{
+    const {book_id}=req.params;
+    console.log(book_id);
+   const user_id=req.user_id;
+   console.log(user_id);
+
+   const remove_query=`Delete from cart where book_id=$1 and user_id=$2`;
+   await pool.query(remove_query,[book_id,user_id]);
+
+   res.redirect('/fetch_cart');
+   }
+   catch(error)
+   {
+    console.log(error);
+   }
+
+}
 const add_to_cart=async (req,res)=>{
+    
 
     try{
+         
         const {book_id}=req.params;
-    const user_id=req.cookies.user_id;
+    const user_id=req.user_id;
     console.log(user_id);
 
     const insert_into_cart_query=`Insert into cart(user_id,book_id) values($1,$2)`;
     const cart_values=await pool.query(insert_into_cart_query,[user_id,book_id]);
-
-    
     
 
+    res.redirect(`/product_description/${book_id}`);
+    
 
-    res.status(201).json({message:"Successfully added to cart"});
+
+    
     }
 
     catch(error)
@@ -171,15 +215,21 @@ const add_to_cart=async (req,res)=>{
 const fetch_cart=async (req,res)=>{
 
     try{
-        const user_id=req.cookies.user_id;
+        
+        console.log(req.cookies);
+        const user_id=req.user_id;
+        console.log(user_id);
 
 
-    const fetch_cart_query=`Select * from cart where user_id=$1`;
+    const fetch_cart_query=`SELECT books.*
+      FROM cart
+      JOIN books ON cart.book_id = books.book_id
+      WHERE cart.user_id = $1`;
     const cart_values=await pool.query(fetch_cart_query,[user_id]);
 
     console.log(cart_values.rows);
 
-    const book_idd=cart_values.rows;
+    res.render('buyerr/cartt',{cart:cart_values.rows})
  
 
      //Consider commented values below later
@@ -191,7 +241,7 @@ const fetch_cart=async (req,res)=>{
     // const book_price=book_dataa.price;
 
 
-    res.status(201.).json({message:"Cart fetch Successful"});
+    // res.status(201.).json({message:"Cart fetch Successful"});
     }
     catch(error)
     {
@@ -199,6 +249,7 @@ const fetch_cart=async (req,res)=>{
     }
 
 }
+
 
 
 
@@ -214,7 +265,7 @@ try{
     const sort_by_category_values=await pool.query(sort_by_category_query,[category]);
     console.log(sort_by_category_values.rows);
 
-    res.status(201).json({message:"The sorted items by category have been received sucessfully"});
+    res.render('category_page',{books:sort_by_category_values.rows});
 }
 catch(error)
 {
@@ -241,7 +292,39 @@ const sort_by_price=async (req,res)=>{
         console.log(error);
     }
        
-    }
+}
+
+
+const search=async (req,res)=>{
+
+try{
+    const search_keyword=req.query.search_keyword;
+
+console.log(search_keyword);
+
+const search_query=`Select books.*,authors.author_name as author_name,publishers.publisher_name 
+ From books left join authors on books.author_id=authors.author_id
+ Left join publishers on books.publisher_id=publishers.publisher_id 
+ where books.title ilike $1
+ or authors.author_name ilike $1
+ or publishers.publisher_name ilike $1`;
+
+
+
+const searchresults=await pool.query(search_query, [`%${search_keyword}%`]);
+
+console.log(searchresults.rows);
+
+
+res.status(202).json({message:"Search results fetched successfully"});
+}
+catch(error)
+{
+    console.log(error);
+}
+
+
+}
 
 // const review_handling=(req,res)=>{
 
@@ -251,4 +334,9 @@ const sort_by_price=async (req,res)=>{
 //     const insert_rating_value=[rating];
 // }
 
-module.exports={place_orders,my_orders,cancel_orders,sort_by_category,sort_by_price,fetch_cart,fetch_books_for_homepage,add_to_cart};
+
+
+
+
+module.exports={place_orders,my_orders,cancel_orders,sort_by_category,sort_by_price,
+    fetch_cart,fetch_books_for_homepage,add_to_cart,search,book_description,remove_from_cart};

@@ -2,6 +2,12 @@ const pool=require('../connection');
 const cloudinary=require('../middlewares/cloudinary')
 
 
+
+
+const add_book_page=(req,res)=>{
+    res.render('sellerr/add_book');
+};
+
 const bookdetails_upload=async (req,res)=>
     {
 
@@ -77,4 +83,4 @@ const bookdetails_upload=async (req,res)=>
 };
 
 
-module.exports={bookdetails_upload};
+module.exports={bookdetails_upload,add_book_page};

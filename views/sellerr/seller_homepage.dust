@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamro Books</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="seller.css">
+	
+	<!-- icons for various mobile and desktop platforms  -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+	<link rel="manifest" href="favicon_io/site.webmanifest">
+</head>
+<body>
+<div class="background-img"></div>
+<!-- header section starts  -->
+
+<header class="header">
+
+    <div class="header-1">
+
+        <a href="seller.html" class="logo"><img src="https://github.com/PunksB1602/images/blob/main/logo.png?raw=true" alt="Logo">Hamro Books </a>
+
+        <form action="/search" class="search-form">
+            <input type="search" name="" placeholder="search here..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="icons">
+            <div id="search-btn" class="fas fa-search"></div>
+            <div id="login-btn" class="fas fa-user"></div>
+        </div>
+
+    </div>
+
+    <div class="header-2">
+        <nav class="navbar">
+            <a href="/seller_home_page">home</a>
+			<a href="/add_a_book">Add New Books</a>
+            <a href="#manage-books">Manage Books</a>
+            <a href="/pending_orders">Orders</a>
+            <a href="#reviews">reviews</a>
+        </nav>
+    </div>
+
+</header>
+
+<!-- header section ends -->
+
+
+
+<!-- manage books section starts  -->
+
+<section class="manage-books" id="manage-books">
+
+    <h1 class="heading"> <span>manage books</span> </h1>
+
+    <div class="swiper featured-slider">
+
+        <div class="swiper-wrapper">
+              {#books}
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-edit"></a>
+                    <a href="#" class="fas fa-trash-alt"></a>
+                </div>
+                <div class="image">
+                    <img src="{image_url}" alt="">
+                </div>
+                <div class="content">
+                    <h3>{title}</h3>
+                </div>
+            </div>
+            {/books}
+
+         </div> 
+
+    </div>
+
+</section>
+
+<!-- manage books section ends -->
+
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>our location</h3>
+            <a href="https://maps.app.goo.gl/pjTyNuoViw4En31w8"> <i class="fas fa-map-marker-alt"></i> Kathmandu </a>
+        </div>
+
+        <div class="box">
+            <h3>extra links</h3>
+            <a href="#"> <i class="fas fa-arrow-right"></i> account info </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> ordered items </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> privacy policy </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> payment method </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> our serivces </a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> 9843787118 </a>
+            <a href="#"> <i class="fas fa-phone"></i> 9867404111 </a>
+			<a href="#"> <i class="fas fa-phone"></i> 9865920096 </a>
+            <a href="https://mail.google.com/"> <i class="fas fa-envelope"></i>gautamsubham65@gmail.com</a>
+			<a href="https://mail.google.com/"> <i class="fas fa-envelope"></i>pratikpokhrel14@gmail.com</a>
+            <a href="https://mail.google.com/"> <i class="fas fa-envelope"></i>pankajbhattcoc16@gmail.com</a>
+            <img src="https://github.com/PunksB1602/book-images/blob/main/map.png?raw=true" class="map" alt="">
+        </div>
+
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="share">
+        <a href="https://www.facebook.com" target="_blank"><img src="https://github.com/PunksB1602/images/blob/main/Facebook_Logo.png?raw=true" alt="Facebook"></a>
+        <a href="https://twitter.com" target="_blank"><img src="https://github.com/PunksB1602/images/blob/main/twitter_logo.png?raw=true" alt="Twitter"></a>
+        <a href="https://www.instagram.com" target="_blank"><img src="https://github.com/PunksB1602/images/blob/main/Instagram_icon.png?raw=true" alt="Instagram"></a>
+        <a href="https://www.linkedin.com" target="_blank"><img src="https://github.com/PunksB1602/images/blob/main/linkedin_icon.png?raw=true" alt="LinkedIn"></a>
+    </div>
+
+    <div class="credit"> created by <span>Subham Gautam, Pratik Pokharel & Pankaj Bhatt </span> copyright ©2024 all rights reserved! </div>
+
+</section>
+
+<!-- footer section ends -->
+
+<!-- page loader  -->
+
+<div class="loader-container">
+    <img src="https://github.com/PunksB1602/book-images/blob/main/loader-img.gif?raw=true" alt="">
+</div>
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="seller.js"></script>
+
+</body>
+</html>

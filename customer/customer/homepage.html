@@ -28,18 +28,16 @@
 
     <div class="header-1">
 
-        <a href="/homepage" class="logo"><img src="https://github.com/PunksB1602/images/blob/main/logo.png?raw=true" alt="Logo">Hamro Books </a>
+        <a href="homepage.html" class="logo"><img src="https://github.com/PunksB1602/images/blob/main/logo.png?raw=true" alt="Logo">Hamro Books </a>
 
-        <form action="/search" class="search-form">
-            <input type="search" name="search_keyword" placeholder="search here..." id="search-box">
+        <form action="" class="search-form">
+            <input type="search" name="" placeholder="search here..." id="search-box">
             <label for="search-box" class="fas fa-search"></label>
-           <button type="submit"> <div class="icons">
-            <div id="search-btn" class="fas fa-search"></div></div></button>
         </form>
 
         <div class="icons">
-           {! <div id="search-btn" class="fas fa-search"></div>!}
-            <a href="/fetch_cart" class="fas fa-shopping-cart"></a>
+            <div id="search-btn" class="fas fa-search"></div>
+            <a href="cart.html" class="fas fa-shopping-cart"></a>
             <div id="login-btn" class="fas fa-user"></div>
         </div>
 
@@ -50,7 +48,7 @@
             <a href="homepage.html">home</a>
             <a href="#featured">featured</a>
             <a href="category.html">category</a>
-            <a href="myorders">My Orders</a>
+            <a href="#reviews">reviews</a>
         </nav>
     </div>
 
@@ -276,25 +274,101 @@
 
 
 <!-- our books section starts  -->
-
 <section class="our-books" id="our-books"section>
     <div class="heading"><span>Our Books</span></div>
-    
     <div class="books-container">
-    {#books}
         <div class="book">
-            <img src="{image_url}" alt="Book 1">
-            <h3>{title}</h3>
-            <a href="/product_description/{book_id}" class="btn">See More</a>
+            <img src="https://github.com/PunksB1602/book-images/blob/main/Data%20Structure%20and%20Algorithm.png?raw=true" alt="Book 1">
+            <h3>Data Structure and Algorithm</h3>
+            <a href="product.html" class="btn">See More</a>
         </div>
-        {/books}
+        <div class="book">
+            <img src="https://github.com/PunksB1602/book-images/blob/main/Object%20Oriented%20Programming.png?raw=true" alt="Book 2">
+            <h3>A Textbook of Object Oriented Programming</h3>
+            <a href="product.html" class="btn">See More</a>
         </div>
-        
-      </div>
-
-    
+         <div class="book">
+            <img src="https://github.com/PunksB1602/book-images/blob/main/Engineering%20Physics.png?raw=true" alt="Book 3">
+            <h3>Advanced Engineering Physics</h3>
+            <a href="product.html" class="btn">See More</a>
+        </div>
+		<div class="book">
+            <img src="https://github.com/PunksB1602/book-images/blob/main/Biography.jpg?raw=true" alt="Book 4">
+            <h3>Catherine - The Great</h3>
+            <a href="product.html" class="btn">See More</a>
+        </div> 
+		<div class="book">
+            <img src="https://github.com/PunksB1602/book-images/blob/main/Health%20and%20Fitness.jpg?raw=true" alt="Book 5">
+            <h3>Plantifully Simple</h3>
+            <a href="product.html" class="btn">See More</a>
+        </div>
+		<div class="book">
+            <img src="https://github.com/PunksB1602/book-images/blob/main/Basic%20Electrical%20Engineering.png?raw=true" alt="Book 6">
+            <h3>First Course in Electrical Engineering</h3>
+            <a href="product.html" class="btn">See More</a>
+        </div> 
+		<div class="book">
+            <img src="https://github.com/PunksB1602/book-images/blob/main/Applied%20Mathematics.png?raw=true" alt="Book 7">
+            <h3>Applied Mathematics</h3>
+            <a href="product.html" class="btn">See More</a>
+        </div>
+		<div class="book">
+            <img src="https://github.com/PunksB1602/book-images/blob/main/Finance.jpg?raw=true" alt="Book 8">
+            <h3>The Alchemy of Finance</h3>
+            <a href="product.html" class="btn">See More</a>
+        </div>
+		<div class="book">
+            <img src="https://github.com/PunksB1602/book-images/blob/main/Engineering%20Drawing%20I.png?raw=true" alt="Book 9">
+            <h3>Engineering Drawing I</h3>
+            <a href="product.html" class="btn">See More</a>
+        </div> 
+		<div class="book">
+            <img src="https://github.com/PunksB1602/book-images/blob/main/Numerical%20Methods.png?raw=true" alt="Book 10">
+            <h3>A Text Book of Numerical Methods</h3>
+            <a href="product.html" class="btn">See More</a>
+        </div> 
+		<div class="book">
+            <img src="https://github.com/PunksB1602/book-images/blob/main/Poetry.jpg?raw=true" alt="Book 11">
+            <h3>The Poery of Laxmi Prasad Devkota</h3>
+            <a href="product.html" class="btn">See More</a>
+        </div>
+		<div class="book">
+            <img src="https://github.com/PunksB1602/book-images/blob/main/Harry%20Potter.jpg?raw=true" alt="Book 12">
+            <h3>A Complete Collection of Harry Potter by J.K. Rowling</h3>
+            <a href="product.html" class="btn">See More</a>
+        </div> 
+		<div class="book">
+            <img src="https://github.com/PunksB1602/book-images/blob/main/Probability%20and%20Statistics.png?raw=true" alt="Book 13">
+            <h3>Probability and Statistics for Engineers</h3>
+            <a href="product.html" class="btn">See More</a>
+        </div> 
+		<div class="book">
+            <img src="https://github.com/PunksB1602/book-images/blob/main/Digital%20Logic.png?raw=true" alt="Book 14">
+            <h3>Introduction to Digital Logic</h3>
+            <a href="product.html" class="btn">See More</a>
+        </div>
+		<div class="book">
+            <img src="https://github.com/PunksB1602/book-images/blob/main/Drama.jpg?raw=true" alt="Book 15">
+            <h3>Othello</h3>
+            <a href="product.html" class="btn">See More</a>
+        </div> 
+		<div class="book">
+            <img src="https://github.com/PunksB1602/book-images/blob/main/Dracula.jpg?raw=true" alt="Book 16">
+            <h3>Bram Stoker's Dracula</h3>
+            <a href="product.html" class="btn">See More</a>
+        </div>
+		<div class="book">
+            <img src="https://github.com/PunksB1602/book-images/blob/main/C%20Programming.png?raw=true" alt="Book 17">
+            <h3>A Textbook of C Programming</h3>
+            <a href="product.html" class="btn">See More</a>
+        </div>
+		<div class="book">
+            <img src="https://github.com/PunksB1602/book-images/blob/main/History.jpg?raw=true" alt="Book 18">
+            <h3>Buddha Dekhi PahalmanSamma</h3>
+            <a href="product.html" class="btn">See More</a>
+        </div>
+    </div>
 </section>
-
 <!-- our books section ends -->
 
 
@@ -309,7 +383,7 @@
 
         <div class="swiper-wrapper">
 
-            <a href="/sort_by_category/Academics" class="swiper-slide box">
+            <a href="product.html" class="swiper-slide box">
                 <div class="image">
                     <img src="https://github.com/PunksB1602/book-images/blob/main/Basic%20Electrical%20Engineering.png?raw=true" alt="">
                 </div>
@@ -318,16 +392,16 @@
                 </div>
             </a>
 
-            <a href="/sort_by_category/Novels" class="swiper-slide box">
+            <a href="product.html" class="swiper-slide box">
                 <div class="image">
                     <img src="https://github.com/PunksB1602/book-images/blob/main/Dracula.jpg?raw=true" alt="">
                 </div>
                 <div class="content">
-                    <h3>Novels</h3>
+                    <h3>Fiction/Fantasy</h3>
                 </div>
             </a>
 
-            <a href="/sort_by_category/History" class="swiper-slide box">
+            <a href="product.html" class="swiper-slide box">
                 <div class="image">
                     <img src="https://github.com/PunksB1602/book-images/blob/main/History.jpg?raw=true" alt="">
                 </div>
@@ -336,7 +410,7 @@
                 </div>
             </a>
 
-            <a href="p/sort_by_category/Poetry" class="swiper-slide box">
+            <a href="product.html" class="swiper-slide box">
                 <div class="image">
                     <img src="https://github.com/PunksB1602/book-images/blob/main/Poetry.jpg?raw=true" alt="">
                 </div>
@@ -353,7 +427,7 @@
 
         <div class="swiper-wrapper">
 
-            <a href="/sort_by_category/Drama" class="swiper-slide box">
+            <a href="product.html" class="swiper-slide box">
                 <div class="image">
                     <img src="https://github.com/PunksB1602/book-images/blob/main/Drama.jpg?raw=true" alt="">
                 </div>
@@ -362,7 +436,7 @@
                 </div>
             </a>
 
-            <a href="/sort_by_category/Biography" class="swiper-slide box">
+            <a href="product.html" class="swiper-slide box">
                 <div class="image">
                     <img src="https://github.com/PunksB1602/book-images/blob/main/Biography.jpg?raw=true" alt="">
                 </div>
@@ -371,21 +445,21 @@
                 </div>
             </a>
 
-            <a href="/sort_by_category/Health" class="swiper-slide box">
+            <a href="product.html" class="swiper-slide box">
                 <div class="image">
                     <img src="https://github.com/PunksB1602/book-images/blob/main/Health%20and%20Fitness.jpg?raw=true" alt="">
                 </div>
                 <div class="content">
-                    <h3>Health</h3>
+                    <h3>Health and Fitness</h3>
                 </div>
             </a>
 
-            <a href="/sort_by_category/Finance" class="swiper-slide box">
+            <a href="product.html" class="swiper-slide box">
                 <div class="image">
                     <img src="https://github.com/PunksB1602/book-images/blob/main/Finance.jpg?raw=true" alt="">
                 </div>
                 <div class="content">
-                    <h3>Finance</h3>
+                    <h3>Business and Finance</h3>
                 </div>
             </a>
 

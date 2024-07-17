@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Categories</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css  -->
+    <style>
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{--black:#000;--white:#fff;--gray:#808080;--light-gray:#d3d3d3;--dark-gray:#a9a9a9;--red:#f00;--light-red:#f66;--dark-red:#8b0000;--green:#008000;--light-green:#90ee90;--dark-green:#006400;--blue:#00f;--light-blue:#add8e6;--dark-blue:#00008b;--yellow:#ff0;--light-yellow:#ffffe0;--dark-yellow:#ffd700;--orange:#ffa500;--light-orange:#ffcc99;--dark-orange:#ff4500;--purple:#800080;--light-purple:#dda0dd;--dark-purple:#4b0082;--pink:#ffc0cb;--light-pink:#ffb6c1;--dark-pink:#ff1493;--brown:#a52a2a;--light-brown:#bc8f8f;--dark-brown:#5d4037;--cyan:#0ff;--light-cyan:#e0ffff;--dark-cyan:#008b8b;--magenta:#f0f;--light-magenta:#f6f;--dark-magenta:#8b008b;--teal:#008080;--light-teal:#20b2aa;--dark-teal:#005757;--navy:#000080;--light-navy:#5f9ea0;--dark-navy:#00004b;--dark-color:#219150;--light-color:#666;--border:.1rem solid rgba(0,0,0,.1);--border-hover:.1rem solid var(--black);--box-shadow:0 .5rem 1rem rgba(0,0,0,.1);}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition:all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width:1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background:var(--black);
+}
+
+section{
+    padding:5rem 9%;
+}
+
+.heading{
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.heading::before{
+    content: '';
+    position: absolute;
+    top:50%; left:0;
+    transform: translateY(-50%);
+    width: 100%;
+    height:.01rem;
+    background: rgba(0,0,0,.1);
+    z-index: -1;
+}
+
+.heading span{
+    font-size: 3rem;
+    padding:.5rem 2rem;
+    color:var(--black);
+    background: #fff;
+    border:var(--border);
+}
+
+.btn{
+    margin-top: 1rem;
+    display:inline-block;
+    padding:.9rem 3rem;
+    border-radius: .5rem;
+    color:#fff;
+    background:var(--light-green);
+    font-size: 1.7rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn:hover{
+    background:var(--dark-color);
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/*page background image*/
+.background-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://github.com/PunksB1602/book-images/blob/main/pagelogo.png?raw=true") no-repeat center center/cover;
+    opacity: 0.5; 
+    z-index: -1;
+}
+
+
+
+/*header section starts*/
+.header .header-1{
+    background:#fff;
+    padding:1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .header-1 .logo{
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--green);
+    text-decoration: none;
+}
+.header .header-1 .logo img {
+            width: 50px; 
+            height: auto;
+            margin-right: 10px;
+        }
+
+.header .header-1 .search-form{
+    width:50rem;
+    height:5rem;
+    border:var(--border);
+    overflow: hidden;
+    background:#fff;
+    display:flex;
+    align-items: center;
+    border-radius: .5rem;
+}
+
+.header .header-1 .search-form input{
+    font-size: 1.6rem;
+    padding:0 1.2rem;
+    height:100%;
+    width:100%;
+    text-transform: none;
+    color:var(--black);
+}
+
+.header .header-1 .search-form label{
+    font-size: 2.5rem;
+    padding-right: 1.5rem;
+    color:var(--black);
+    cursor: pointer;
+}
+
+.header .header-1 .search-form label:hover{
+    color:var(--light-green);
+}
+
+.header .header-1 .icons div,
+.header .header-1 .icons a{
+    font-size: 2.5rem;
+    margin-left: 1.5rem;
+    color:var(--black);
+    cursor: pointer;
+}
+
+.header .header-1 .icons div:hover,
+.header .header-1 .icons a:hover{
+    color:var(--light-green);
+}
+
+#search-btn{
+    display: none;
+}
+
+.header .header-2{
+    background:var(--light-green);
+}
+
+.header .header-2 .navbar{
+    text-align: center;
+}
+
+.header .header-2 .navbar a{
+    color:#fff;
+    display: inline-block;
+    padding:1.2rem;
+    font-size: 1.7rem;
+}
+
+.header .header-2 .navbar a:hover{
+    background:var(--dark-color);
+}
+
+.header .header-2.active{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index: 1000;
+
+}
+
+/*header section ends*/
+
+
+
+/* Category Section Starts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.category {
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+.category-heading-box {
+    margin-bottom: 20px; 
+    background-color: #ddd;
+    padding: 10px;
+    text-align: center;
+}
+.category-heading {
+    font-size: 24px;
+    color: #333;
+}
+.swiper-slider {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.category-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.swiper-slide {
+    flex: 0 0 calc(15% - 20px);
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.swiper-slide:hover {
+    transform: translateY(-5px);
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+}
+.content {
+    padding: 10px;
+    text-align: center;
+}
+.content h3 {
+    margin: 10px 0;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+}
+@media (max-width: 1200px) {
+    .swiper-slide {
+        flex: 0 0 calc(33.33% - 20px); 
+    }
+}
+@media (max-width: 992px) {
+    .swiper-slide {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+@media (max-width: 576px) {
+    .swiper-slide {
+        flex: 0 0 calc(100% - 20px);
+        margin-right: 0;
+    }
+}
+/* Category Section ends */
+
+
+
+/*footer section starts*/
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap:1.5rem;
+}
+.footer .box-container .box h3{
+    font-size: 2.2rem;
+    color:var(--black);
+    padding:1rem 0;
+}
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.4rem;
+    color:var(--light-color);
+    padding:1rem 0;
+}
+.footer .box-container .box a i{
+    color:var(--red);
+    padding-right: .5rem;
+}
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}
+.footer .box-container .box .map{
+    width:50%;
+}
+
+	
+.footer .share {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.footer .share a img {
+    width: 60px; 
+    height: auto;
+}
+
+
+.footer .credit {
+    border-top: var(--border);
+    margin-top: 2rem;
+    padding: 0 1rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: var(--light-color);
+    text-align: center;
+}
+
+.footer .credit span {
+    color: var(--magenta);
+}
+/*footer section ends*/
+	</style>
+	
+	<!-- icons for various mobile and desktop platforms  -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+	<link rel="manifest" href="favicon_io/site.webmanifest">
+</head>
+<body>
+<div class="background-img"></div>
+<!-- header section starts  -->
+
+<header class="header">
+
+    <div class="header-1">
+
+        <a href="homepage.html" class="logo"><img src="https://github.com/PunksB1602/images/blob/main/logo.png?raw=true" alt="Logo">Hamro Books </a>
+
+        <form action="" class="search-form">
+            <input type="search" name="" placeholder="search here..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="icons">
+            <div id="search-btn" class="fas fa-search"></div>
+            <a href="cart.html" class="fas fa-shopping-cart"></a>
+            <div id="login-btn" class="fas fa-user"></div>
+        </div>
+
+    </div>
+
+    <div class="header-2">
+        <nav class="navbar">
+            <a href="homepage.html">home</a>
+            <a href="#featured">featured</a>
+            <a href="category.html">category</a>
+            <a href="#reviews">reviews</a>
+        </nav>
+    </div>
+
+</header>
+
+<!-- header section ends -->
+
+
+
+<!-- category section starts-->
+<section class="category" id="category">
+
+    <h1 class="heading"> <span>Category</span> </h1>
+	
+    <!-- Academics -->
+		<div class="category-heading-box">
+			<h2 class="category-heading">Academics</h2>
+		</div>
+		<div class="category-group">
+			<div class="swiper-slider">
+				<a href="product.html" class="swiper-slide box">
+					<div class="image">
+						<img src="https://github.com/PunksB1602/book-images/blob/main/Basic%20Electrical%20Engineering.png?raw=true" alt="Academics">
+					</div>
+                <div class="content">
+                    <h3>A Textbook of First Course in Electrical Engineering</h3>
+                </div>
+				</a>
+				<a href="product.html" class="swiper-slide box">
+					<div class="image">
+						<img src="https://github.com/PunksB1602/book-images/blob/main/Basic%20Electrical%20Engineering.png?raw=true" alt="Academics">
+					</div>
+                <div class="content">
+                    <h3>A Textbook of First Course in Electrical Engineering</h3>
+                </div>
+				</a>
+				<a href="product.html" class="swiper-slide box">
+					<div class="image">
+						<img src="https://github.com/PunksB1602/book-images/blob/main/Basic%20Electrical%20Engineering.png?raw=true" alt="Academics">
+					</div>
+                <div class="content">
+                    <h3>A Textbook of First Course in Electrical Engineering</h3>
+                </div>
+				</a>
+				<a href="product.html" class="swiper-slide box">
+					<div class="image">
+						<img src="https://github.com/PunksB1602/book-images/blob/main/Basic%20Electrical%20Engineering.png?raw=true" alt="Academics">
+					</div>
+                <div class="content">
+                    <h3>A Textbook of First Course in Electrical Engineering</h3>
+                </div>
+				</a>
+				<a href="product.html" class="swiper-slide box">
+					<div class="image">
+						<img src="https://github.com/PunksB1602/book-images/blob/main/Basic%20Electrical%20Engineering.png?raw=true" alt="Academics">
+					</div>
+                <div class="content">
+                    <h3>A Textbook of First Course in Electrical Engineering</h3>
+                </div>
+				</a>
+			
+			</div>
+		</div>
+
+    <!-- Fiction/Fantasy -->
+		<div class="category-heading-box">
+			<h2 class="category-heading">Fiction/Fantasy</h2>
+		</div>
+		<div class="category-group">
+			<div class="swiper-slider">
+				<a href="product.html" class="swiper-slide box">
+					<div class="image">
+						<img src="https://github.com/PunksB1602/book-images/blob/main/Dracula.jpg?raw=true" alt="Fiction/Fantasy">
+					</div>
+					<div class="content">
+						<h3>Bram Stoker's Dracula</h3>
+					</div>
+				</a>
+				<a href="product.html" class="swiper-slide box">
+					<div class="image">
+						<img src="https://github.com/PunksB1602/book-images/blob/main/Dracula.jpg?raw=true" alt="Fiction/Fantasy">
+					</div>
+					<div class="content">
+						<h3>Bram Stoker's Dracula</h3>
+					</div>
+				</a>
+				<a href="product.html" class="swiper-slide box">
+					<div class="image">
+						<img src="https://github.com/PunksB1602/book-images/blob/main/Dracula.jpg?raw=true" alt="Fiction/Fantasy">
+					</div>
+					<div class="content">
+						<h3>Bram Stoker's Dracula</h3>
+					</div>
+				</a>
+				<a href="product.html" class="swiper-slide box">
+					<div class="image">
+						<img src="https://github.com/PunksB1602/book-images/blob/main/Dracula.jpg?raw=true" alt="Fiction/Fantasy">
+					</div>
+					<div class="content">
+						<h3>Bram Stoker's Dracula</h3>
+					</div>
+				</a>
+				<a href="product.html" class="swiper-slide box">
+					<div class="image">
+						<img src="https://github.com/PunksB1602/book-images/blob/main/Dracula.jpg?raw=true" alt="Fiction/Fantasy">
+					</div>
+					<div class="content">
+						<h3>Bram Stoker's Dracula</h3>
+					</div>
+				</a>
+            
+        </div>
+    </div>
+
+    <!-- History -->
+		<div class="category-heading-box">
+			<h2 class="category-heading">History</h2>
+		</div>
+			<div class="category-group">
+				<div class="swiper-slider">
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/History.jpg?raw=true" alt="History">
+						</div>
+						<div class="content">
+							<h3>Buddha Dekhi PahalmanSamma</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/History.jpg?raw=true" alt="History">
+						</div>
+						<div class="content">
+							<h3>Buddha Dekhi PahalmanSamma</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/History.jpg?raw=true" alt="History">
+						</div>
+						<div class="content">
+							<h3>Buddha Dekhi PahalmanSamma</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/History.jpg?raw=true" alt="History">
+						</div>
+						<div class="content">
+							<h3>Buddha Dekhi PahalmanSamma</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/History.jpg?raw=true" alt="History">
+						</div>
+						<div class="content">
+							<h3>Buddha Dekhi PahalmanSamma</h3>
+						</div>
+					</a>
+            
+        </div>
+    </div>
+	  
+	<!-- Poetry -->
+		<div class="category-heading-box">
+			<h2 class="category-heading">Poetry</h2>
+		</div>
+			<div class="category-group">
+				<div class="swiper-slider">
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Poetry.jpg?raw=true" alt="Poetry">
+						</div>
+						<div class="content">
+							<h3>The Poery of Laxmi Prasad Devkota</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Poetry.jpg?raw=true" alt="Poetry">
+						</div>
+						<div class="content">
+							<h3>The Poery of Laxmi Prasad Devkota</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Poetry.jpg?raw=true" alt="Poetry">
+						</div>
+						<div class="content">
+							<h3>The Poery of Laxmi Prasad Devkota</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Poetry.jpg?raw=true" alt="Poetry">
+						</div>
+						<div class="content">
+							<h3>The Poery of Laxmi Prasad Devkota</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Poetry.jpg?raw=true" alt="Poetry">
+						</div>
+						<div class="content">
+							<h3>The Poery of Laxmi Prasad Devkota</h3>
+						</div>
+					</a>
+            
+        </div>
+    </div>
+	
+	<!-- Drama -->
+		<div class="category-heading-box">
+			<h2 class="category-heading">Drama</h2>
+		</div>
+			<div class="category-group">
+				<div class="swiper-slider">
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Drama.jpg?raw=true" alt="Drama">
+						</div>
+						<div class="content">
+							<h3>Othello</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Drama.jpg?raw=true" alt="Drama">
+						</div>
+						<div class="content">
+							<h3>Othello</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Drama.jpg?raw=true" alt="Drama">
+						</div>
+						<div class="content">
+							<h3>Othello</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Drama.jpg?raw=true" alt="Drama">
+						</div>
+						<div class="content">
+							<h3>Othello</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Drama.jpg?raw=true" alt="Drama">
+						</div>
+						<div class="content">
+							<h3>Othello</h3>
+						</div>
+					</a>
+          
+			
+        </div>
+    </div>
+	 
+	<!-- Biography -->
+		<div class="category-heading-box">
+			<h2 class="category-heading">Biography</h2>
+		</div>
+			<div class="category-group">
+				<div class="swiper-slider">
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Biography.jpg?raw=true" alt="Biography">
+						</div>
+						<div class="content">
+							<h3>Catherine - The Great</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Biography.jpg?raw=true" alt="Biography">
+						</div>
+						<div class="content">
+							<h3>Catherine - The Great</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Biography.jpg?raw=true" alt="Biography">
+						</div>
+						<div class="content">
+							<h3>Catherine - The Great</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Biography.jpg?raw=true" alt="Biography">
+						</div>
+						<div class="content">
+							<h3>Catherine - The Great</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Biography.jpg?raw=true" alt="Biography">
+						</div>
+						<div class="content">
+							<h3>Catherine - The Great</h3>
+						</div>
+					</a>
+					
+            
+        </div>
+    </div>
+	  
+	<!-- Health and Fitness -->
+		<div class="category-heading-box">
+			<h2 class="category-heading">Health and Fitness</h2>
+		</div>
+			<div class="category-group">
+				<div class="swiper-slider">
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Health%20and%20Fitness.jpg?raw=true" alt="Health and Fitness">
+						</div>
+						<div class="content">
+							<h3>Plantifully Simple</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Health%20and%20Fitness.jpg?raw=true" alt="Health and Fitness">
+						</div>
+						<div class="content">
+							<h3>Plantifully Simple</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Health%20and%20Fitness.jpg?raw=true" alt="Health and Fitness">
+						</div>
+						<div class="content">
+							<h3>Plantifully Simple</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Health%20and%20Fitness.jpg?raw=true" alt="Health and Fitness">
+						</div>
+						<div class="content">
+							<h3>Plantifully Simple</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Health%20and%20Fitness.jpg?raw=true" alt="Health and Fitness">
+						</div>
+						<div class="content">
+							<h3>Plantifully Simple</h3>
+						</div>
+					</a>
+           
+        </div>
+    </div>
+	<!-- Business and Finance -->
+		<div class="category-heading-box">
+			<h2 class="category-heading">Business and Finance</h2>
+		</div>
+			<div class="category-group">
+				<div class="swiper-slider">
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Finance.jpg?raw=true" alt="Business and Finance">
+						</div>
+						<div class="content">
+							<h3>The Alchemy of Finance</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Finance.jpg?raw=true" alt="Business and Finance">
+						</div>
+						<div class="content">
+							<h3>The Alchemy of Finance</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Finance.jpg?raw=true" alt="Business and Finance">
+						</div>
+						<div class="content">
+							<h3>The Alchemy of Finance</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Finance.jpg?raw=true" alt="Business and Finance">
+						</div>
+						<div class="content">
+							<h3>The Alchemy of Finance</h3>
+						</div>
+					</a>
+					<a href="product.html" class="swiper-slide box">
+						<div class="image">
+							<img src="https://github.com/PunksB1602/book-images/blob/main/Finance.jpg?raw=true" alt="Business and Finance">
+						</div>
+						<div class="content">
+							<h3>The Alchemy of Finance</h3>
+						</div>
+					</a>
+        </div>
+    </div>
+	
+</section>
+<!--category section ends-->
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>our location</h3>
+            <a href="https://maps.app.goo.gl/pjTyNuoViw4En31w8"> <i class="fas fa-map-marker-alt"></i> Kathmandu </a>
+        </div>
+
+        <div class="box">
+            <h3>extra links</h3>
+            <a href="#"> <i class="fas fa-arrow-right"></i> account info </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> ordered items </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> privacy policy </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> payment method </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> our serivces </a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> 9843787118 </a>
+            <a href="#"> <i class="fas fa-phone"></i> 9865920096 </a>
+            <a href="https://mail.google.com/"> <i class="fas fa-envelope"></i>gautamsubham65@gmail.com</a>
+            <a href="https://mail.google.com/"> <i class="fas fa-envelope"></i>pankajbhatt16@hotmail.com</a>
+            <img src="https://github.com/PunksB1602/book-images/blob/main/map.png?raw=true" class="map" alt="">
+        </div>
+
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="share">
+        <a href="https://www.facebook.com" target="_blank"><img src="https://github.com/PunksB1602/images/blob/main/Facebook_Logo.png?raw=true" alt="Facebook"></a>
+        <a href="https://twitter.com" target="_blank"><img src="https://github.com/PunksB1602/images/blob/main/twitter_logo.png?raw=true" alt="Twitter"></a>
+        <a href="https://www.instagram.com" target="_blank"><img src="https://github.com/PunksB1602/images/blob/main/Instagram_icon.png?raw=true" alt="Instagram"></a>
+        <a href="https://www.linkedin.com" target="_blank"><img src="https://github.com/PunksB1602/images/blob/main/linkedin_icon.png?raw=true" alt="LinkedIn"></a>
+    </div>
+
+    <div class="credit"> created by <span>Pankaj Bhatt & Subham Gautam </span>copyright ©2024 all rights reserved! </div>
+
+</section>
+
+<!-- footer section ends -->
+
+</body>
+</html>
