@@ -107,4 +107,13 @@ const registeruser=async(req,res)=>{
 };
 
 
-module.exports={loginuser,registeruser};
+const logout=(req,res)=>{
+
+    res.clearcookie('authToken');
+    res.redirect('/login');
+
+
+
+}
+
+module.exports={loginuser,registeruser,logout};

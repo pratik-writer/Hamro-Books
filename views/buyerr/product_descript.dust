@@ -447,7 +447,7 @@ input:focus{
 
         <div class="icons">
             <div id="search-btn" class="fas fa-search"></div>
-            <a href="/fetch_cartl" class="fas fa-shopping-cart"></a>
+            <a href="/fetch_cart" class="fas fa-shopping-cart"></a>
             <div id="login-btn" class="fas fa-user"></div>
         </div>
 

@@ -29,6 +29,9 @@ router.post('/register',auth.registeruser);
 //     res.render('homepage')
 // });
 
+
+router.get('/logout',authmiddleware,auth.logout);
+
 router.get('/product_description/:book_id',authmiddleware,ensurebuyer,buyer_section_order.book_description)
 
 
