@@ -78,9 +78,9 @@ const registeruser=async(req,res)=>{
     const checkvalues=[username,email];
 
    try{
-          
+          console.log("database about to connect");
     const isexists=await pool.query(checkquery,checkvalues);
-
+            console.log("connected");
 
     if(isexists.rows.length>0){
         return res.status(400).json({error:"Username or password already exists"});
@@ -106,6 +106,7 @@ const registeruser=async(req,res)=>{
 
 };
 
+//logout
 
 const logout=(req,res)=>{
 

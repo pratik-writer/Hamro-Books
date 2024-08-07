@@ -45,7 +45,11 @@ router.get("/remove_from_cart/:book_id",authmiddleware,buyer_section_order.remov
 router.get("/fetch_cart",authmiddleware,authmiddleware,buyer_section_order.fetch_cart);
 router.get("/sort_by_category/:category",authmiddleware,buyer_section_order.sort_by_category);
 router.get("/sort_by_price",authmiddleware,buyer_section_order.sort_by_price);
+
+
 router.get("/search",authmiddleware,buyer_section_order.search);
+router.get("/myprofile",authmiddleware,buyer_section_order.view_profile);
+router.get("/logout",authmiddleware,auth.logout);
 
 
 

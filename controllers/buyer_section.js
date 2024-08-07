@@ -126,7 +126,7 @@ const my_orders=async (req,res)=>{
     const my_orders_list=await pool.query(my_orders_select_query,[my_id]);
 
     console.log(my_orders_list.rows);
-    res.render("buyerr/my_orders",{orders:my_orders_list.rows});
+    res.render("buyerr/buyerorders",{orders:my_orders_list.rows});
 
     }
     catch(error)
@@ -295,6 +295,8 @@ const sort_by_price=async (req,res)=>{
 }
 
 
+
+
 const search=async (req,res)=>{
 
 try{
@@ -316,7 +318,8 @@ const searchresults=await pool.query(search_query, [`%${search_keyword}%`]);
 console.log(searchresults.rows);
 
 
-res.status(202).json({message:"Search results fetched successfully"});
+// res.status(202).json({message:"Search results fetched successfully"});
+res.render('buyerr/searchresult',{results:searchresults.rows,search_key:search_keyword});
 }
 catch(error)
 {
@@ -338,5 +341,19 @@ catch(error)
 
 
 
+const view_profile=async (req,res)=>{
+    const user_id=req.user_id;
+
+    const profile_query=`Select * from users where user_id=$1`;
+
+    const profile=await pool.query(profile_query,[user_id]);
+    console.log(profile.rows);
+
+    res.render('/myprofile',{profile_values:profile.rows});
+
+}
+
+
+
 module.exports={place_orders,my_orders,cancel_orders,sort_by_category,sort_by_price,
-    fetch_cart,fetch_books_for_homepage,add_to_cart,search,book_description,remove_from_cart};
+    fetch_cart,fetch_books_for_homepage,add_to_cart,search,book_description,remove_from_cart,search,view_profile};
