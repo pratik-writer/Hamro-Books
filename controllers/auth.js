@@ -55,7 +55,8 @@ try{
                 }
         }
         else{
-            res.status(200).json(sendResponse(false, 'No user found Check your Credential Properly'));
+            res.redirect('/?message=Invalid credentials. Please try again.');
+            // res.status(200).json(sendResponse(false, 'No user found Check your Credential Properly'));
         }
 }
 catch(error)
@@ -94,7 +95,7 @@ const registeruser=async(req,res)=>{
      const insertvalues=[username,email,hashedpassword,firstname,lastname,phonenumber,address,isseller];
      await pool.query(insertquery,insertvalues);
 
-     res.status(201).json({message:"User registered successfully"});
+     res.redirect('/login');
 
    }
 

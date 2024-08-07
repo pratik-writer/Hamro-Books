@@ -11,6 +11,9 @@
 <div class="login-container">
     <img src="https://github.com/PunksB1602/images/blob/main/logo.png?raw=true" alt="Hamro Books Logo" class="logo-img">
     <form id="login-form"  action="/login" method="post">
+    {#if message}
+    <p style="color:red;">{message}</p>
+  {/if}
         <div class="form-group">
             <label for="email">Username</label>
             <input type="text" id="email" name="username" placeholder="Username" required>

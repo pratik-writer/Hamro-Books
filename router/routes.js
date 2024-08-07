@@ -14,7 +14,8 @@ const { ensureseller,ensurebuyer } = require('../middlewares/ensureSeller');
 
 
 router.get('/',(req,res)=>{
-    res.render("loginpage");
+    const message=req.query.message;
+    res.render("loginpage",{message});
 
 });
 router.post('/login',auth.loginuser);

@@ -126,7 +126,7 @@ const my_orders=async (req,res)=>{
     const my_orders_list=await pool.query(my_orders_select_query,[my_id]);
 
     console.log(my_orders_list.rows);
-    res.render("buyerr/buyerorders",{orders:my_orders_list.rows});
+    res.render('buyerr/buyerorders',{orders:my_orders_list.rows});
 
     }
     catch(error)
@@ -149,7 +149,7 @@ const cancel_orders=async (req,res)=>{
     const cancel_order_query=`Update  orders set delivery_status=$1 where order_id=$2`;
     await pool.query(cancel_order_query,[delivery_status,order_id]);
 
-    res.status(201).json({message:"Order cancelled successfully"});
+    res.redirect('/my_orders');
 
     }
     catch(error)
