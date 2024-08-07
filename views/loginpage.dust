@@ -11,9 +11,7 @@
 <div class="login-container">
     <img src="https://github.com/PunksB1602/images/blob/main/logo.png?raw=true" alt="Hamro Books Logo" class="logo-img">
     <form id="login-form"  action="/login" method="post">
-    {#if message}
-    <p style="color:red;">{message}</p>
-  {/if}
+    
         <div class="form-group">
             <label for="email">Username</label>
             <input type="text" id="email" name="username" placeholder="Username" required>
@@ -22,6 +20,11 @@
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Password" required>
         </div>
+        {#message}
+              <div class="">
+            <label for="text">{message}</label>
+        </div>
+  {/message}
         <input type="checkbox" id="checkbox-1-1" class="custom-checkbox">
         <label for="checkbox-1-1">Keep me Signed in</label>
         <button type="submit">Log In</button>
