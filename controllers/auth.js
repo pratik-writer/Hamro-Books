@@ -36,7 +36,8 @@ try{
 
             if(!ispasswordmatch)
                 {
-                    return (res.status(200).json(sendResponse(false, 'Email and password are not matching')));
+                    res.redirect('/?Password Doesnot match. Please try again.');
+                    // return (res.status(200).json(sendResponse(false, 'Email and password are not matching')));
                 }
                 else{
                     const authToken=jwt.sign({userid:user.user_id,is_seller:user.is_seller},process.env.JWT_SECRET_KEY,{expiresIn:'200m'})
