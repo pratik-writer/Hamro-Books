@@ -329,7 +329,7 @@
 
             <a href="/sort_by_category/History" class="swiper-slide box">
                 <div class="image">
-                    <img src="https://github.com/PunksB1602/book-images/blob/main/History.jpg?raw=true" alt="">
+                    <img src="https://github.com/PunksB1602/book-images/blob/main/History.png?raw=true" alt="">
                 </div>
                 <div class="content">
                     <h3>History</h3>
@@ -338,7 +338,7 @@
 
             <a href="p/sort_by_category/Poetry" class="swiper-slide box">
                 <div class="image">
-                    <img src="https://github.com/PunksB1602/book-images/blob/main/Poetry.jpg?raw=true" alt="">
+                    <img src="https://github.com/PunksB1602/book-images/blob/main/Poetry.png?raw=true" alt="">
                 </div>
                 <div class="content">
                     <h3>Poetry</h3>
@@ -355,7 +355,7 @@
 
             <a href="/sort_by_category/Drama" class="swiper-slide box">
                 <div class="image">
-                    <img src="https://github.com/PunksB1602/book-images/blob/main/Drama.jpg?raw=true" alt="">
+                    <img src="https://github.com/PunksB1602/book-images/blob/main/Drama.png?raw=true" alt="">
                 </div>
                 <div class="content">
                     <h3>Drama</h3>
@@ -364,7 +364,7 @@
 
             <a href="/sort_by_category/Biography" class="swiper-slide box">
                 <div class="image">
-                    <img src="https://github.com/PunksB1602/book-images/blob/main/Biography.jpg?raw=true" alt="">
+                    <img src="https://github.com/PunksB1602/book-images/blob/main/Biography.png?raw=true" alt="">
                 </div>
                 <div class="content">
                     <h3>Biography</h3>
@@ -373,7 +373,7 @@
 
             <a href="/sort_by_category/Health" class="swiper-slide box">
                 <div class="image">
-                    <img src="https://github.com/PunksB1602/book-images/blob/main/Health%20and%20Fitness.jpg?raw=true" alt="">
+                    <img src="https://github.com/PunksB1602/book-images/blob/main/Health%20and%20Fitness.png?raw=true" alt="">
                 </div>
                 <div class="content">
                     <h3>Health</h3>
@@ -382,7 +382,7 @@
 
             <a href="/sort_by_category/Finance" class="swiper-slide box">
                 <div class="image">
-                    <img src="https://github.com/PunksB1602/book-images/blob/main/Finance.jpg?raw=true" alt="">
+                    <img src="https://github.com/PunksB1602/book-images/blob/main/Finance.png?raw=true" alt="">
                 </div>
                 <div class="content">
                     <h3>Finance</h3>
