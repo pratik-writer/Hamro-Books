@@ -28,7 +28,7 @@
 
     <div class="header-1">
 
-        <a href="/homepage" class="logo"><img src="https://github.com/PunksB1602/images/blob/main/logo.png?raw=true" alt="Logo">Hamro Books </a>
+        <a href="/buyer_homepage" class="logo"><img src="https://github.com/PunksB1602/images/blob/main/logo.png?raw=true" alt="Logo">Hamro Books </a>
 
         <form action="/search" class="search-form">
             <input type="search" name="search_keyword" placeholder="search here..." id="search-box">
