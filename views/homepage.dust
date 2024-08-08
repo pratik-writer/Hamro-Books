@@ -50,7 +50,7 @@
             <a href="/buyer_homepage">home</a>
             <a href="#featured">featured</a>
             <a href="#category">category</a>
-            <a href="/myorders">My Orders</a>
+            <a href="/my_orders">My Orders</a>
         </nav>
     </div>
 
@@ -422,8 +422,10 @@
         <div class="box">
             <h3>contact info</h3>
             <a href="#"> <i class="fas fa-phone"></i> 9843787118 </a>
+            <a href="#"> <i class="fas fa-phone"></i> 9867404111 </a>
             <a href="#"> <i class="fas fa-phone"></i> 9865920096 </a>
             <a href="https://mail.google.com/"> <i class="fas fa-envelope"></i>gautamsubham65@gmail.com</a>
+            <a href="https://mail.google.com/"> <i class="fas fa-envelope"></i>pratikpokhrel14@gmail.com</a>
             <a href="https://mail.google.com/"> <i class="fas fa-envelope"></i>pankajbhatt16@hotmail.com</a>
             <img src="https://github.com/PunksB1602/book-images/blob/main/map.png?raw=true" class="map" alt="">
         </div>
@@ -438,7 +440,7 @@
         <a href="https://www.linkedin.com" target="_blank"><img src="https://github.com/PunksB1602/images/blob/main/linkedin_icon.png?raw=true" alt="LinkedIn"></a>
     </div>
 
-    <div class="credit"> created by <span>Pankaj Bhatt & Subham Gautam </span>copyright ©2024 all rights reserved! </div>
+    <div class="credit"> created by <span>Pankaj Bhatt,Pratik Pokharel & Subham Gautam </span>copyright ©2024 all rights reserved! </div>
 
 </section>
 
