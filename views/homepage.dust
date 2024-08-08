@@ -150,7 +150,7 @@
                    <a href="product.html"> <img src="https://github.com/PunksB1602/book-images/blob/main/Data%20Structure%20and%20Algorithm.png?raw=true" alt=""> </a>
                 </div>
                 <div class="content">
-                    <h3>featured books</h3>
+                    <h3>Data Structure and Algorithms</h3>
                     <a href="cart.html" class="btn">add to cart</a>
                 </div>
             </div>
@@ -162,7 +162,7 @@
                     <a href="product.html"> <img src="https://github.com/PunksB1602/book-images/blob/main/Object%20Oriented%20Programming.png?raw=true" alt=""> </a>
                 </div>
                 <div class="content">
-                    <h3>featured books</h3>                  
+                    <h3>Object Oriented Programming</h3>                  
                     <a href="cart.html" class="btn">add to cart</a>
                 </div>
             </div>
@@ -174,7 +174,7 @@
                     <a href="product.html"><img src="https://github.com/PunksB1602/book-images/blob/main/C%20Programming.png?raw=true" alt=""> </a>
                 </div>
                 <div class="content">
-                    <h3>featured books</h3>
+                    <h3>C programming</h3>
                     <a href="cart.html" class="btn">add to cart</a>
                 </div>
             </div>
@@ -186,7 +186,7 @@
                     <a href="product.html"><img src="https://github.com/PunksB1602/book-images/blob/main/Digital%20Logic.png?raw=true" alt="">
                 </div>
                 <div class="content">
-                    <h3>featured books</h3>
+                    <h3>Digital Logic</h3>
                     <a href="cart.html" class="btn">add to cart</a>
                 </div>
             </div>
@@ -198,7 +198,7 @@
                     <a href="product.html"><img src="https://github.com/PunksB1602/book-images/blob/main/Probability%20and%20Statistics.png?raw=true" alt="">
                 </div>
                 <div class="content">
-                    <h3>featured books</h3>
+                    <h3>Probability and Statistics</h3>
                     <a href="cart.html" class="btn">add to cart</a>
                 </div>
             </div>
@@ -210,7 +210,7 @@
                     <a href="product.html"><img src="https://github.com/PunksB1602/book-images/blob/main/Numerical%20Methods.png?raw=true" alt="">
                 </div>
                 <div class="content">
-                    <h3>featured books</h3>
+                    <h3>Numerical Methods</h3>
                     <a href="cart.html" class="btn">add to cart</a>
                 </div>
             </div>
@@ -222,7 +222,7 @@
                     <a href="product.html"><img src="https://github.com/PunksB1602/book-images/blob/main/Engineering%20Physics.png?raw=true" alt="">
                 </div>
                 <div class="content">
-                    <h3>featured books</h3>
+                    <h3>ENgineering Physics</h3>
                     <a href="cart.html" class="btn">add to cart</a>
                 </div>
             </div>
@@ -234,7 +234,7 @@
                     <a href="product.html"><img src="https://github.com/PunksB1602/book-images/blob/main/Basic%20Electrical%20Engineering.png?raw=true" alt="">
                 </div>
                 <div class="content">
-                    <h3>featured books</h3>
+                    <h3>Basic Electrical Engineering</h3>
                     <a href="cart.html" class="btn">add to cart</a>
                 </div>
             </div>
@@ -246,7 +246,7 @@
                     <a href="product.html"><img src="https://github.com/PunksB1602/book-images/blob/main/Applied%20Mathematics.png?raw=true" alt="">
                 </div>
                 <div class="content">
-                    <h3>featured books</h3>
+                    <h3>Applied Mathematics</h3>
                     <a href="cart.html" class="btn">add to cart</a>
                 </div>
             </div>
@@ -258,7 +258,7 @@
                     <a href="product.html"><img src="https://github.com/PunksB1602/book-images/blob/main/Engineering%20Drawing%20I.png?raw=true" alt="">
                 </div>
                 <div class="content">
-                    <h3>featured books</h3>
+                    <h3>Engineering Drawing</h3>
                     <a href="cart.html" class="btn">add to cart</a>
                 </div>
             </div>
